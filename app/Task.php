@@ -18,4 +18,14 @@ class Task extends Model
         'id_board',
         'id_user'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
+
+    public function board()
+    {
+        return $this->belongsTo('App\Board');
+    }
 }

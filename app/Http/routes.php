@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('projects', 'ProjectController');
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
+
+Route::get('/user/projects', 'UserController@projects');

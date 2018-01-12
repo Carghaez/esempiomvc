@@ -14,4 +14,19 @@ class Project extends Model
     protected $fillable = [
         'name', 'id_manager'
     ];
+
+    public function manager()
+    {
+        return $this->belongsTo('App\User', 'id_manager');
+    }
+
+    public function boards()
+    {
+        return $this->hasMany('App\Board');
+    }
+
+    public function getBoards()
+    {
+        return $this->boards()->get();
+    }
 }
